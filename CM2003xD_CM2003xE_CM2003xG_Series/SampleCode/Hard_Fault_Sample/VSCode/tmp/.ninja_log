@@ -1,0 +1,13 @@
+# ninja log v6
+27	490	8075174479521448	Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-mkdir	c5ab009869edfea9
+27	490	8075174479521448	D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-mkdir	c5ab009869edfea9
+493	943	8075174484089992	Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-download	ad95c669eafb2202
+493	943	8075174484089992	D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-download	ad95c669eafb2202
+944	1451	8075174489173241	Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-update	180e97c6f0ff9d90
+944	1451	8075174489173241	D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-update	180e97c6f0ff9d90
+1451	2252	8075174496930308	Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-patch	aa1f22c39a1346fe
+1451	2252	8075174496930308	D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-patch	aa1f22c39a1346fe
+2252	13474	8075174609419356	Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-configure	7b05242462323637
+2252	13474	8075174609419356	D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-configure	7b05242462323637
+13474	14435	8075174609640639	Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-database	d02dd13bbfcca544
+13474	14435	8075174609640639	D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-database	d02dd13bbfcca544

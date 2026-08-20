@@ -1,0 +1,48 @@
+cbuild-run:
+  generated-by: csolution version 2.9.0
+  solution: Hard_Fault_Sample.csolution.yml
+  target-type: ARMCLANG
+  compiler: AC6
+  device: Nuvoton::CM2003GN8AE
+  device-pack: Nuvoton::NuMicroCM23_DFP@1.0.4
+  output:
+    - file: out/Hard_Fault_Sample/ARMCLANG/Release/Hard_Fault_Sample.axf
+      info: generate by Hard_Fault_Sample.Release+ARMCLANG
+      type: elf
+      load: image+symbols
+    - file: out/Hard_Fault_Sample/ARMCLANG/Release/Hard_Fault_Sample.bin
+      info: generate by Hard_Fault_Sample.Release+ARMCLANG
+      type: bin
+      load: none
+  system-resources:
+    memory:
+      - name: IROM1
+        access: rx
+        start: 0x00000000
+        size: 0x00008000
+        from-pack: Nuvoton::NuMicroCM23_DFP@1.0.4
+      - name: IRAM1
+        access: rwx
+        start: 0x20000000
+        size: 0x00001000
+        from-pack: Nuvoton::NuMicroCM23_DFP@1.0.4
+  system-descriptions:
+    - file: ${CMSIS_PACK_ROOT}/Nuvoton/NuMicroCM23_DFP/1.0.4/SVD/Nuvoton/CM2003.svd
+      type: svd
+  debugger:
+    name: CMSIS-DAP@pyOCD
+    protocol: swd
+    clock: 10000000
+    gdbserver:
+      - port: 3333
+  programming:
+    - algorithm: ${CMSIS_PACK_ROOT}/Nuvoton/NuMicroCM23_DFP/1.0.4/Flash/CM2003_AP_256.FLM
+      start: 0x00000000
+      size: 0x00008000
+      ram-start: 0x20000000
+      ram-size: 0x00001000
+    - algorithm: ${CMSIS_PACK_ROOT}/Nuvoton/NuMicroCM23_DFP/1.0.4/Flash/CM2003_LD_4.FLM
+      start: 0x00100000
+      size: 0x00001000
+      ram-start: 0x20000000
+      ram-size: 0x00001000

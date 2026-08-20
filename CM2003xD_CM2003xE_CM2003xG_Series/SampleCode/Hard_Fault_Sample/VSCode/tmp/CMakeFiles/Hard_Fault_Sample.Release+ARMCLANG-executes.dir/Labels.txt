@@ -1,0 +1,12 @@
+# Target labels
+ Hard_Fault_Sample.Release+ARMCLANG
+# Source files and their labels
+D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/CMakeFiles/Hard_Fault_Sample.Release+ARMCLANG-executes
+D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/CMakeFiles/Hard_Fault_Sample.Release+ARMCLANG-executes.rule
+D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-executes.rule
+D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-build.rule
+D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-configure.rule
+D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-patch.rule
+D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-update.rule
+D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-download.rule
+D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-mkdir.rule

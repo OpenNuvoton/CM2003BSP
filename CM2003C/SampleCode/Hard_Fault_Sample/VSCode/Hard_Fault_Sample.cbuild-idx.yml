@@ -1,0 +1,21 @@
+build-idx:
+  generated-by: csolution version 2.9.0
+  csolution: Hard_Fault_Sample.csolution.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: Hard_Fault_Sample.cproject.yml
+  cbuilds:
+    - cbuild: Hard_Fault_Sample.Release+ARMCLANG.cbuild.yml
+      project: Hard_Fault_Sample
+      configuration: .Release+ARMCLANG
+      errors: true
+      messages:
+        errors:
+          - "required pack: Nuvoton::NuMicroCM23_DFP not installed"
+          - "specified device 'Nuvoton::CM2003CF2AE' not found in the installed packs. Use:\n  cpackget add Vendor::PackName"
+          - processing context 'Hard_Fault_Sample.Release+ARMCLANG' failed
+        info:
+          - Hard_Fault_Sample.cbuild-pack.yml - file skipped
+          - Hard_Fault_Sample.Release+ARMCLANG.cbuild.yml - file generated successfully
+      packs-missing:
+        - pack: Nuvoton::NuMicroCM23_DFP

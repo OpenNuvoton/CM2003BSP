@@ -1,0 +1,15 @@
+build-idx:
+  generated-by: csolution version 2.9.0
+  csolution: Hard_Fault_Sample.csolution.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: Hard_Fault_Sample.cproject.yml
+  cbuilds:
+    - cbuild: Hard_Fault_Sample.Release+ARMCLANG.cbuild.yml
+      project: Hard_Fault_Sample
+      configuration: .Release+ARMCLANG
+      messages:
+        info:
+          - Hard_Fault_Sample.cbuild-pack.yml - file generated successfully
+          - Hard_Fault_Sample+ARMCLANG.cbuild-run.yml - file generated successfully
+          - Hard_Fault_Sample.Release+ARMCLANG.cbuild.yml - file generated successfully

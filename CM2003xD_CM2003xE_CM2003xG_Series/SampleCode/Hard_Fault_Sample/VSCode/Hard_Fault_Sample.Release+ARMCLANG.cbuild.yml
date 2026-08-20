@@ -1,0 +1,95 @@
+build:
+  generated-by: csolution version 2.9.0
+  solution: Hard_Fault_Sample.csolution.yml
+  project: Hard_Fault_Sample.cproject.yml
+  context: Hard_Fault_Sample.Release+ARMCLANG
+  compiler: AC6
+  device: Nuvoton::CM2003GN8AE
+  device-pack: Nuvoton::NuMicroCM23_DFP@1.0.4
+  processor:
+    endian: little
+    core: Cortex-M23
+  packs:
+    - pack: Nuvoton::NuMicroCM23_DFP@1.0.4
+      path: ${CMSIS_PACK_ROOT}/Nuvoton/NuMicroCM23_DFP/1.0.4
+  optimize: balanced
+  debug: on
+  misc:
+    ASM:
+      - -masm=auto
+      - -D__MICROLIB
+    C:
+      - -iquote "../../../Library/Device/Nuvoton/CM2003/Include"
+      - -D__MICROLIB
+      - -std=c99
+      - -fno-rtti
+      - -funsigned-char
+      - -fshort-enums
+      - -fshort-wchar
+      - -ffunction-sections
+    CPP:
+      - -xc++
+      - -std=c++98
+      - -fno-rtti
+      - -funsigned-char
+      - -fshort-enums
+      - -fshort-wchar
+      - -ffunction-sections
+    Link:
+      - --library_type=microlib
+      - --map
+      - --load_addr_map_info
+      - --symbols
+      - --info sizes
+      - --info totals
+      - --map --datacompressor=off --info=inline --entry Reset_Handler
+      - --strict
+      - --summary_stderr
+      - --info summarysizes
+  add-path:
+    - ../../../Library/CMSIS/Core/Include
+    - ../../../Library/Device/Nuvoton/CM2003/Include
+    - ../../../Library/StdDriver/inc
+    - ${CMSIS_PACK_ROOT}/Nuvoton/NuMicroCM23_DFP/1.0.4/Device/CM2003/Include
+  add-path-asm:
+    - ${CMSIS_PACK_ROOT}/Nuvoton/NuMicroCM23_DFP/1.0.4/Device/CM2003/Include
+  output-dirs:
+    intdir: tmp
+    outdir: out/Hard_Fault_Sample/ARMCLANG/Release
+    rtedir: RTE
+  output:
+    - type: bin
+      file: Hard_Fault_Sample.bin
+    - type: elf
+      file: Hard_Fault_Sample.axf
+  linker:
+    script: ../../../Library/Device/Nuvoton/CM2003/Source/ARM/APROM.sct
+  groups:
+    - group: CMSIS
+      files:
+        - file: ../../../Library/Device/Nuvoton/CM2003/Source/system_CM2003.c
+          category: sourceC
+        - file: ../../../Library/Device/Nuvoton/CM2003/Source/ARM/startup_CM2003.c
+          category: sourceC
+    - group: User
+      files:
+        - file: ../main.c
+          category: sourceC
+    - group: Library
+      files:
+        - file: ../../../Library/StdDriver/src/clk.c
+          category: sourceC
+        - file: ../../../Library/StdDriver/src/retarget.c
+          category: sourceC
+        - file: ../../../Library/StdDriver/src/sys.c
+          category: sourceC
+        - file: ../../../Library/StdDriver/src/uart.c
+          category: sourceC
+    - group: ChipDef
+      files:
+        - file: ../../../Library/Device/Nuvoton/CM2003/Include/chip_type.h
+          category: header
+  licenses:
+    - license: <unknown>
+      packs:
+        - pack: Nuvoton::NuMicroCM23_DFP@1.0.4

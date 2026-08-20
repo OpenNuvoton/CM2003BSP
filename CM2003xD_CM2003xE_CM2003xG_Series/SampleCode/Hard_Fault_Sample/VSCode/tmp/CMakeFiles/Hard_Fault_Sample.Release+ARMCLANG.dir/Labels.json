@@ -1,0 +1,52 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/CMakeFiles/Hard_Fault_Sample.Release+ARMCLANG"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/CMakeFiles/Hard_Fault_Sample.Release+ARMCLANG.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/CMakeFiles/Hard_Fault_Sample.Release+ARMCLANG-complete.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-build.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-configure.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-database.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-download.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-executes.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-install.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-mkdir.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-patch.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-test.rule"
+		},
+		{
+			"file" : "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG/src/Hard_Fault_Sample.Release+ARMCLANG-stamp/Hard_Fault_Sample.Release+ARMCLANG-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Hard_Fault_Sample.Release+ARMCLANG"
+		],
+		"name" : "Hard_Fault_Sample.Release+ARMCLANG"
+	}
+}

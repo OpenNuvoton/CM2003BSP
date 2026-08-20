@@ -1,0 +1,9 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=source_dir
+command=
+source_dir=D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode/tmp/Hard_Fault_Sample.Release+ARMCLANG
+work_dir=
+

@@ -1,0 +1,7 @@
+# roots.cmake
+set(CMSIS_PACK_ROOT "C:/Users/ffcai/AppData/Local/Arm/Packs" CACHE PATH "CMSIS pack root")
+cmake_path(ABSOLUTE_PATH CMSIS_PACK_ROOT NORMALIZE OUTPUT_VARIABLE CMSIS_PACK_ROOT)
+set(CMSIS_COMPILER_ROOT "C:/Users/ffcai/.vcpkg/artifacts/2139c4c6/tools.open.cmsis.pack.cmsis.toolbox/2.9.0/etc" CACHE PATH "CMSIS compiler root")
+cmake_path(ABSOLUTE_PATH CMSIS_COMPILER_ROOT NORMALIZE OUTPUT_VARIABLE CMSIS_COMPILER_ROOT)
+set(SOLUTION_ROOT "D:/BSP/M2003BSP-master_new/M2003BSP-master/CM2003xC_CM2003xD_CM2003xE_CM2003xG_Series/SampleCode/Hard_Fault_Sample/VSCode" CACHE PATH "CMSIS solution root")
+cmake_path(ABSOLUTE_PATH SOLUTION_ROOT NORMALIZE OUTPUT_VARIABLE SOLUTION_ROOT)
