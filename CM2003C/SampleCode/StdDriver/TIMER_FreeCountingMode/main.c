@@ -32,10 +32,10 @@ void SYS_Init(void)
 
     /* Waiting for internal RC clock ready */
     CLK_WaitClockReady(CLK_STATUS_HIRCSTB_Msk);
-    
+
     /* Switch HCLK clock source to internal RC and HCLK source divide 1 */
     CLK_SetHCLK(CLK_CLKSEL0_HCLKSEL_HIRC, CLK_CLKDIV0_HCLK(1));
-    
+
     /* Set PCLK0/PCLK1 to HCLK/1 */
     CLK->PCLKDIV = (CLK_PCLKDIV_APB0DIV_DIV1 | CLK_PCLKDIV_APB1DIV_DIV1);
 
@@ -98,8 +98,8 @@ void TMR0_IRQHandler(void)
         }
         else
         {
-            /* TIMER0 clock source = PCLK0 = HCLK / 2 = HIRC / 2 */
-            printf("Input frequency is %dHz\n", (int32_t)(__HIRC/2) / (t1 - t0));
+            /* TIMER0 clock source = PCLK0 = HCLK = HIRC */
+            printf("Input frequency is %dHz\n", (int32_t)(__HIRC) / (t1 - t0));
         }
     }
     else

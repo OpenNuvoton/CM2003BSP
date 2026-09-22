@@ -63,9 +63,22 @@ void SYS_Init(void)
     /* Set the UART debug port */
     Uart0DefaultMPF();
 
-    /* Set multi-function pins for USCI0_DAT0(PB.8), USCI0_DAT1(PB.9), USCI0_CTL0(PB.11) and USCI0_CTL1(PB.15) */
-    SYS->GPB_MFPH &= ~(SYS_GPB_MFPH_PB15MFP_Msk | SYS_GPB_MFPH_PB11MFP_Msk | SYS_GPB_MFPH_PB9MFP_Msk | SYS_GPB_MFPH_PB8MFP_Msk);
-    SYS->GPB_MFPH |= (SYS_GPB_MFPH_PB15MFP_USCI0_CTL1 | SYS_GPB_MFPH_PB11MFP_USCI0_CTL0 | SYS_GPB_MFPH_PB9MFP_USCI0_DAT1 |SYS_GPB_MFPH_PB8MFP_USCI0_DAT0);
+    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
+    {
+        /* Set multi-function pins for USCI0_DAT0(PB.8), USCI0_DAT1(PB.9), USCI0_CTL0(PB.11) and USCI0_CTL1(PB.15) */
+        SYS->GPB_MFPH &= ~(SYS_GPB_MFPH_PB15MFP_Msk | SYS_GPB_MFPH_PB11MFP_Msk | SYS_GPB_MFPH_PB9MFP_Msk | SYS_GPB_MFPH_PB8MFP_Msk);
+        SYS->GPB_MFPH |= (SYS_GPB_MFPH_PB15MFP_USCI0_CTL1 | SYS_GPB_MFPH_PB11MFP_USCI0_CTL0 | SYS_GPB_MFPH_PB9MFP_USCI0_DAT1 |SYS_GPB_MFPH_PB8MFP_USCI0_DAT0);
+    }
+    else
+    {
+        /* Set multi-function pins for USCI0_DAT0(PA.10), USCI0_DAT1(PA.9), USCI0_CTL1(PA.8) */  
+        SYS->GPA_MFPH &= ~(SYS_GPA_MFPH_PA10MFP_Msk | SYS_GPA_MFPH_PA9MFP_Msk | SYS_GPA_MFPH_PA8MFP_Msk);
+        SYS->GPA_MFPH |= (SYS_GPA_MFPH_PA10MFP_USCI0_DAT0 | SYS_GPA_MFPH_PA9MFP_USCI0_DAT1 | SYS_GPA_MFPH_PA8MFP_USCI0_CTL1);
+
+        /* Set multi-function pin for USCI0_CTL0(PB.0) */
+        SYS->GPB_MFPL &= ~(SYS_GPB_MFPL_PB0MFP_Msk);
+        SYS->GPB_MFPL |= (SYS_GPB_MFPL_PB0MFP_USCI0_CTL0);
+    }
 }
 
 void UART0_Init(void)
@@ -143,8 +156,16 @@ void USCI_AutoFlow_FunctionTest(void)
     printf("|  ______                                              _____  |\n");
     printf("| |      |                                            |     | |\n");
     printf("| |Master|                                            |Slave| |\n");
-    printf("| |    TX|--USCI0_DAT1(P.9)  <==>  USCI0_DAT0(PB.8)---|RX   | |\n");
-    printf("| |  nCTS|--USCI0_CTL0(PB.11) <==> USCI0_CTL1(PB.15)--|nRTS | |\n");
+    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
+    {
+        printf("| |    TX|--USCI0_DAT1(PB.9)  <==> USCI0_DAT0(PB.8) --|RX   | |\n");
+        printf("| |  nCTS|--USCI0_CTL0(PB.11) <==> USCI0_CTL1(PB.15)--|nRTS | |\n");
+    }
+    else
+    {
+        printf("| |    TX|--USCI0_DAT1(PA.9) <==>  USCI0_DAT0(PA.10)--|RX   | |\n");
+        printf("| |  nCTS|--USCI0_CTL0(PB.0) <==>  USCI0_CTL1(PA.8) --|nRTS | |\n");
+    }
     printf("| |______|                                            |_____| |\n");
     printf("|                                                             |\n");
     printf("+-------------------------------------------------------------+\n");

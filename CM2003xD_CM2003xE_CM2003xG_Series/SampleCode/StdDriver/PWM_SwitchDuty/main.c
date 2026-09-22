@@ -150,7 +150,7 @@ int32_t main(void)
     printf("+-----------------------------------------------------------------------------------+\n");
     printf("  This sample code will use PWM0 channel 0 to output waveform, and switch duty cycle.\n");
     printf("  I/O configuration:\n");
-    printf("    waveform output pin: PWM0 channel 0(PA.0)\n");
+    printf("  waveform output pin: PWM0 channel 0(PB.5)\n");
     printf("\nOutput waveform is 400 Hz and it's duty is 50%%. \n");
 
     /*

@@ -220,6 +220,13 @@ int32_t main(void)
     /* Init UART to 115200-8n1 for print message */
     UART0_Init();
 
+    /* Checking if target device supports the feature */
+    if (CHIP_TYPE != CHIP_TYPE_CM2003G)
+    {
+        printf("\n\nOnly CM2003G support the feature\n");
+        while(SYS->PDID);
+    }
+
     printf("\n\nCPU @ %dHz\n", SystemCoreClock);
     printf("PWM0 clock is from %s\n", (CLK->CLKSEL2 & CLK_CLKSEL2_PWM0SEL_Msk) ? "PCLK" : "Error Clock Source");
     printf("+------------------------------------------------------------------------+\n");

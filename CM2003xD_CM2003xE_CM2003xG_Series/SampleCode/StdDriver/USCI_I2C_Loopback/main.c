@@ -467,6 +467,13 @@ int main(void)
     /* Init UART for print message */
     UART_Open(UART0, 115200);
 
+    /* Checking if target device supports the feature */
+    if (CHIP_TYPE != CHIP_TYPE_CM2003G)
+    {
+        printf("\n\nOnly CM2003G support the feature\n");
+        while(SYS->PDID);
+    }
+
     /*
         This sample code sets USCI_I2C bus clock to 100kHz. Then, Master accesses Slave with Byte Write
         and Byte Read operations, and check if the read data is equal to the programmed data.

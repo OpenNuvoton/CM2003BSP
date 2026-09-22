@@ -60,6 +60,7 @@ void SYS_Init(void)
     /* Select IP clock source */
     /* Select UART0 clock source is HIRC */
     CLK_SetModuleClock(UART0_MODULE, CLK_CLKSEL2_UART0SEL_HIRC, CLK_CLKDIV0_UART0(1));
+
     /* Select UART1 clock source is HIRC */
     CLK_SetModuleClock(UART1_MODULE, CLK_CLKSEL2_UART1SEL_HIRC, CLK_CLKDIV0_UART1(1));
 
@@ -75,8 +76,12 @@ void SYS_Init(void)
     /* Set PB multi-function pins for UART1 TXD, RXD, CTS and RTS */
     SYS->GPB_MFPL = ((SYS->GPB_MFPL & ~(SYS_GPB_MFPL_PB2MFP_Msk | SYS_GPB_MFPL_PB3MFP_Msk)) |   \
                      (SYS_GPB_MFPL_PB2MFP_UART1_RXD | SYS_GPB_MFPL_PB3MFP_UART1_TXD));
-    SYS->GPB_MFPH = ((SYS->GPB_MFPH & ~(SYS_GPB_MFPH_PB8MFP_Msk | SYS_GPB_MFPH_PB9MFP_Msk))  |  \
-                     (SYS_GPB_MFPH_PB8MFP_UART1_nRTS | SYS_GPB_MFPH_PB9MFP_UART1_nCTS));
+    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
+        SYS->GPB_MFPH = ((SYS->GPB_MFPH & ~(SYS_GPB_MFPH_PB8MFP_Msk | SYS_GPB_MFPH_PB9MFP_Msk))  |  \
+                         (SYS_GPB_MFPH_PB8MFP_UART1_nRTS | SYS_GPB_MFPH_PB9MFP_UART1_nCTS));
+    else
+        SYS->GPA_MFPL = ((SYS->GPA_MFPL & ~(SYS_GPA_MFPL_PA0MFP_Msk | SYS_GPA_MFPL_PA1MFP_Msk))  |  \
+                         (SYS_GPA_MFPL_PA0MFP_UART1_nRTS | SYS_GPA_MFPL_PA1MFP_UART1_nCTS));
 
     /* Lock protected registers */
     SYS_LockReg();
@@ -280,7 +285,7 @@ void RS485_9bitModeSlave()
     printf("|    Normal Multidrop Operation Mode                        |\n");
     printf("+-----------------------------------------------------------+\n");
     printf("| The function is used to test 9-bit slave mode.            |\n");
-    printf("| Only Address %2x and %2x,data can receive                  |\n", MATCH_ADDRSS1, MATCH_ADDRSS2);
+    printf("| Only Address %2x and %2x,data can receive                 |\n", MATCH_ADDRSS1, MATCH_ADDRSS2);
     printf("+-----------------------------------------------------------+\n");
 
     /* Set RX_DIS enable before set RS485-NMM mode */
@@ -337,7 +342,10 @@ void RS485_FunctionTest()
     printf("|  ______                                 _______             |\n");
     printf("| |      |                               |       |            |\n");
     printf("| |Master|---TXD(PB.3) <===> RXD(PB.2)---| Slave |            |\n");
+    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
     printf("| |      |---RTS(PB.8) <===> RTS(PB.8)---|       |            |\n");
+    else
+    printf("| |      |---RTS(PA.0) <===> RTS(PA.0)---|       |            |\n");
     printf("| |______|                               |_______|            |\n");
     printf("|                                                             |\n");
     printf("+-------------------------------------------------------------+\n\n");

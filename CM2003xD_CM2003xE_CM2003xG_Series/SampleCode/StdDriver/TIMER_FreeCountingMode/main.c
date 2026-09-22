@@ -98,8 +98,8 @@ void TMR0_IRQHandler(void)
         }
         else
         {
-            /* TIMER0 clock source = PCLK0 = HCLK / 2 = HIRC / 2 */
-            printf("Input frequency is %dHz\n", (int32_t)(__HIRC/2) / (t1 - t0));
+            /* TIMER0 clock source = PCLK0 = HCLK = HIRC */
+            printf("Input frequency is %dHz\n", (int32_t)(__HIRC) / (t1 - t0));
         }
     }
     else

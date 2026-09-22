@@ -379,17 +379,17 @@ int main(void)
     /* Init System, IP clock and multi-function I/O */
     SYS_Init();
 
-    /* Checking if target device supports the feature */
-    if( (CHIP_TYPE != CHIP_TYPE_CM2003G) )
-    {
-        printf("Only CM2003G support the feature\n");
-        while(SYS->PDID);
-    }
-
     D2D3_SwitchToNormalMode();
 
     /* Init UART to 115200-8n1 for print message */
     UART_Open(UART0, 115200);
+
+    /* Checking if target device supports the feature */
+    if (CHIP_TYPE != CHIP_TYPE_CM2003G)
+    {
+        printf("\n\nOnly CM2003G support the feature\n");
+        while(SYS->PDID);
+    }
 
     /* Configure SPI_FLASH_PORT as a master, MSB first, 8-bit transaction, QSPI Mode-0 timing, clock is 20MHz */
     QSPI_Open(SPI_FLASH_PORT, QSPI_MASTER, QSPI_MODE_0, 8, 20000000);

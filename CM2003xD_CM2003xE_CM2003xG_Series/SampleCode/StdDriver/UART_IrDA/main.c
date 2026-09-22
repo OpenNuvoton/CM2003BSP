@@ -228,7 +228,7 @@ void IrDA_FunctionRxTest(void)
     printf("+-----------------------------------------------------------+\n");
     printf("|     IrDA Function Rx Mode Test                            |\n");
     printf("+-----------------------------------------------------------+\n");
-    printf("| 1). Polling RDA_Flag to check data input though UART     |\n");
+    printf("| 1). Polling RDA_Flag to check data input though UART      |\n");
     printf("| 2). If received data is '0', the program will exit.       |\n");
     printf("|     Otherwise, print received data on terminal            |\n");
     printf("+-----------------------------------------------------------+\n\n");

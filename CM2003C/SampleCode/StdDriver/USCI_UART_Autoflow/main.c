@@ -143,7 +143,7 @@ void USCI_AutoFlow_FunctionTest(void)
     printf("|  ______                                              _____  |\n");
     printf("| |      |                                            |     | |\n");
     printf("| |Master|                                            |Slave| |\n");
-    printf("| |    TX|--USCI0_DAT1(P.9)  <==>  USCI0_DAT0(PB.8)---|RX   | |\n");
+    printf("| |    TX|--USCI0_DAT1(PB.9)  <==> USCI0_DAT0(PB.8) --|RX   | |\n");
     printf("| |  nCTS|--USCI0_CTL0(PB.11) <==> USCI0_CTL1(PB.15)--|nRTS | |\n");
     printf("| |______|                                            |_____| |\n");
     printf("|                                                             |\n");

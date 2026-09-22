@@ -55,7 +55,10 @@ int main()
     printf(" USCI_SPI0 configuration:\n");
     printf("     Master mode; data width 16 bits.\n");
     printf(" I/O connection:\n");
-    printf("     PD.1 USCI_SPI0_MOSI <--> PD.2 USCI_SPI0_MISO \n");
+    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
+        printf("     PD.1 USCI_SPI0_MOSI <--> PD.2 USCI_SPI0_MISO \n");
+    else
+        printf("     PA.10 USCI_SPI0_MOSI <--> PA.9 USCI_SPI0_MISO \n");
 
     printf("\nUSCI_SPI0 Loopback test ");
 
@@ -140,7 +143,10 @@ void SYS_Init(void)
     CLK_EnableModuleClock(USCI0_MODULE);
 
     /* Enable GPIO clock */
-    CLK_EnableModuleClock(GPD_MODULE);
+    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
+        CLK_EnableModuleClock(GPD_MODULE);
+    else
+        CLK_EnableModuleClock(GPA_MODULE);
 
     /* Update System Core Clock */
     /* User can use SystemCoreClockUpdate() to calculate PllClock, SystemCoreClock and CyclesPerUs automatically. */
@@ -153,13 +159,26 @@ void SYS_Init(void)
     Uart0DefaultMPF();
 
     /* Set USCI0_SPI multi-function pins */
-    SYS->GPD_MFPL = SYS->GPD_MFPL & ~(SYS_GPD_MFPL_PD0MFP_Msk|SYS_GPD_MFPL_PD1MFP_Msk|SYS_GPD_MFPL_PD2MFP_Msk);
-    SYS->GPD_MFPL = SYS->GPD_MFPL | (SYS_GPD_MFPL_PD0MFP_USCI0_CLK | SYS_GPD_MFPL_PD1MFP_USCI0_DAT0 | SYS_GPD_MFPL_PD2MFP_USCI0_DAT1);
     SYS->GPB_MFPL = SYS->GPB_MFPL & ~(SYS_GPB_MFPL_PB0MFP_Msk);
     SYS->GPB_MFPL = SYS->GPB_MFPL | (SYS_GPB_MFPL_PB0MFP_USCI0_CTL0);
 
-    /* USCI_SPI clock pin enable schmitt trigger */
-    PD->SMTEN |= GPIO_SMTEN_SMTEN0_Msk;
+    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
+    {
+        SYS->GPD_MFPL = SYS->GPD_MFPL & ~(SYS_GPD_MFPL_PD0MFP_Msk|SYS_GPD_MFPL_PD1MFP_Msk|SYS_GPD_MFPL_PD2MFP_Msk);
+        SYS->GPD_MFPL = SYS->GPD_MFPL | (SYS_GPD_MFPL_PD0MFP_USCI0_CLK | SYS_GPD_MFPL_PD1MFP_USCI0_DAT0 | SYS_GPD_MFPL_PD2MFP_USCI0_DAT1);
+
+        /* USCI_SPI clock pin enable schmitt trigger */
+        PD->SMTEN |= GPIO_SMTEN_SMTEN0_Msk;
+    }
+    else
+    {
+        /* Set USCI0_SPI multi-function pins */
+        SYS->GPA_MFPH = SYS->GPA_MFPH & ~(SYS_GPA_MFPH_PA11MFP_Msk|SYS_GPA_MFPH_PA10MFP_Msk|SYS_GPA_MFPH_PA9MFP_Msk);
+        SYS->GPA_MFPH = SYS->GPA_MFPH | (SYS_GPA_MFPH_PA11MFP_USCI0_CLK | SYS_GPA_MFPH_PA10MFP_USCI0_DAT0 | SYS_GPA_MFPH_PA9MFP_USCI0_DAT1);
+
+        /* USCI_SPI clock pin enable schmitt trigger */
+        PA->SMTEN |= GPIO_SMTEN_SMTEN11_Msk;
+    }
 
     /* Lock protected registers */
     SYS_LockReg();

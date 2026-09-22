@@ -68,9 +68,12 @@ void SYS_Init(void)
     /* Set PB multi-function pins for UART1 TXD, RXD, CTS and RTS */
     SYS->GPB_MFPL = ((SYS->GPB_MFPL & ~(SYS_GPB_MFPL_PB2MFP_Msk | SYS_GPB_MFPL_PB3MFP_Msk)) |   \
                      (SYS_GPB_MFPL_PB2MFP_UART1_RXD | SYS_GPB_MFPL_PB3MFP_UART1_TXD));
-    SYS->GPB_MFPH = ((SYS->GPB_MFPH & ~(SYS_GPB_MFPH_PB8MFP_Msk | SYS_GPB_MFPH_PB9MFP_Msk))  |  \
-                     (SYS_GPB_MFPH_PB8MFP_UART1_nRTS | SYS_GPB_MFPH_PB9MFP_UART1_nCTS));
-
+    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
+        SYS->GPB_MFPH = ((SYS->GPB_MFPH & ~(SYS_GPB_MFPH_PB8MFP_Msk | SYS_GPB_MFPH_PB9MFP_Msk))  |  \
+                         (SYS_GPB_MFPH_PB8MFP_UART1_nRTS | SYS_GPB_MFPH_PB9MFP_UART1_nCTS));
+    else
+        SYS->GPA_MFPL = ((SYS->GPA_MFPL & ~(SYS_GPA_MFPL_PA0MFP_Msk | SYS_GPA_MFPL_PA1MFP_Msk))  |  \
+                         (SYS_GPA_MFPL_PA0MFP_UART1_nRTS | SYS_GPA_MFPL_PA1MFP_UART1_nCTS));
 
     /* Lock protected registers */
     SYS_LockReg();
@@ -147,7 +150,10 @@ void AutoFlow_FunctionTest(void)
     printf("|  ______                                            _____  |\n");
     printf("| |      |                                          |     | |\n");
     printf("| |Master|--UART1_TXD(PB.3)  <==>  UART1_RXD(PB.2)--|Slave| |\n");
+    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
     printf("| |      |--UART1_nCTS(PB.9) <==> UART1_nRTS(PB.8)--|     | |\n");
+    else
+    printf("| |      |--UART1_nCTS(PA.1) <==> UART1_nRTS(PA.0)--|     | |\n");
     printf("| |______|                                          |_____| |\n");
     printf("|                                                           |\n");
     printf("+-----------------------------------------------------------+\n");
@@ -158,7 +164,7 @@ void AutoFlow_FunctionTest(void)
     printf("+-----------------------------------------------------------+\n");
     printf("|  Description :                                            |\n");
     printf("|    The sample code needs two boards. One is Master and    |\n");
-    printf("|    the other is slave. Master will send 1k bytes data     |\n");
+    printf("|    the other is slave. Master will send 256 bytes data    |\n");
     printf("|    to slave. Slave will check if received data is correct |\n");
     printf("|  Please select Master or Slave test                       |\n");
     printf("|  [0] Master    [1] Slave                                  |\n");
@@ -182,7 +188,7 @@ void AutoFlow_FunctionTxTest(void)
     /* Enable RTS and CTS autoflow control */
     UART_EnableFlowCtrl(UART1);
 
-    /* Send 1k bytes data */
+    /* Send 256 bytes data */
     for(u32i = 0; u32i < RXBUFSIZE; u32i++)
     {
         /* Send 1 byte data */
@@ -224,7 +230,7 @@ void AutoFlow_FunctionRxTest(void)
 
     printf("\n Starting to receive data...\n");
 
-    /* Wait for receive 1k bytes data */
+    /* Wait for receive 256 bytes data */
     while(g_i32pointer < RXBUFSIZE);
 
     /* Compare Data */

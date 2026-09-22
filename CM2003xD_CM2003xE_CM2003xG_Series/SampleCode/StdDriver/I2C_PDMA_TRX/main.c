@@ -586,15 +586,22 @@ int32_t main (void)
     /* Init UART0 for printf */
     UART0_Init();
 
+    /* Checking if target device supports the feature */
+    if (CHIP_TYPE != CHIP_TYPE_CM2003G)
+    {
+        printf("\n\nOnly CM2003G support the feature\n");
+        while(SYS->PDID);
+    }
+
     /*
         This sample code sets I2C bus clock to 100kHz. Then, Master accesses Slave with Byte Write
         and Byte Read operations, and check if the read data is equal to the programmed data.
     */
 
     printf("+-------------------------------------------------------+\n");
-    printf("|       I2C Driver Sample Code for PDMA             |\n");
+    printf("|       I2C Driver Sample Code for PDMA                 |\n");
     printf("|                                                       |\n");
-    printf("|  I2C Master (I2C0) <---> I2C Slave(I2C0)      |\n");
+    printf("|  I2C Master (I2C0) <---> I2C Slave(I2C0)              |\n");
     printf("+-------------------------------------------------------+\n");
     printf("|  Please select Master or Slave test                   |\n");
     printf("|  [0] Master    [1] Slave                              |\n");

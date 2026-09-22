@@ -156,9 +156,9 @@ int main(void)
     UART0_Init();
 
     /* Checking if target device supports the feature */
-    if( (CHIP_TYPE != CHIP_TYPE_CM2003G) )
+    if (CHIP_TYPE != CHIP_TYPE_CM2003G)
     {
-        printf("Only CM2003G support the feature\n");
+        printf("\n\nOnly CM2003G support the feature\n");
         while(SYS->PDID);
     }
 

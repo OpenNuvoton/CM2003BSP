@@ -282,7 +282,7 @@ void RS485_9bitModeSlave()
     printf("|    Normal Multidrop Operation Mode                        |\n");
     printf("+-----------------------------------------------------------+\n");
     printf("| The function is used to test 9-bit slave mode.            |\n");
-    printf("| Only Address %2x and %2x,data can receive                  |\n", MATCH_ADDRSS1, MATCH_ADDRSS2);
+    printf("| Only Address %2x and %2x,data can receive                 |\n", MATCH_ADDRSS1, MATCH_ADDRSS2);
     printf("+-----------------------------------------------------------+\n");
 
     /* Set RX_DIS enable before set RS485-NMM mode */

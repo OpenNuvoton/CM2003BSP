@@ -155,6 +155,13 @@ int32_t main(void)
     /* Init USCI0 */
     USCI0_Init();
 
+    /* Checking if target device supports the feature */
+    if (CHIP_TYPE != CHIP_TYPE_CM2003G)
+    {
+        printf("\n\nOnly CM2003G support the feature\n");
+        while(SYS->PDID);
+    }
+
     /*---------------------------------------------------------------------------------------------------------*/
     /* SAMPLE CODE                                                                                             */
     /*---------------------------------------------------------------------------------------------------------*/

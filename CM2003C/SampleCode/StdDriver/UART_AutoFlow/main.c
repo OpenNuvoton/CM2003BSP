@@ -184,7 +184,7 @@ void AutoFlow_FunctionTxTest(void)
     /* Enable RTS and CTS autoflow control */
     UART_EnableFlowCtrl(UART1);
 
-    /* Send 1k bytes data */
+    /* Send 256 bytes data */
     for(u32i = 0; u32i < RXBUFSIZE; u32i++)
     {
         /* Send 1 byte data */
@@ -226,7 +226,7 @@ void AutoFlow_FunctionRxTest(void)
 
     printf("\n Starting to receive data...\n");
 
-    /* Wait for receive 1k bytes data */
+    /* Wait for receive 256 bytes data */
     while(g_i32pointer < RXBUFSIZE);
 
     /* Compare Data */
