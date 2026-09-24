@@ -225,16 +225,9 @@ void RS485_FunctionTest(void)
     printf("|  ______                                            _____  |\n");
     printf("| |      |                                          |     | |\n");
     printf("| |Master|                                          |Slave| |\n");
-    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
-    {
-        printf("| |    TX|--USCI0_DAT1(PB.9)     USCI0_DAT0(PB.8)---|RX   | |\n");
-        printf("| |   RTS|--USCI0_CTL1(PB.15)    USCI0_CTL1(PB.15)--|RTS  | |\n");
-    }
-    else
-    {
-        printf("| |    TX|--USCI0_DAT1(PA.9)     USCI0_DAT0(PA.10)--|RX   | |\n");
-        printf("| |   RTS|--USCI0_CTL1(PA.8)     USCI0_CTL1(PA.8)---|RTS  | |\n");
-    }
+    /* NOTE: Reference for LQFP64/48. Update pin assignments if using QFN33.*/
+    printf("| |    TX|--USCI0_DAT1(PA.9)     USCI0_DAT0(PA.10)--|RX   | |\n");
+    printf("| |   RTS|--USCI0_CTL1(PA.8)     USCI0_CTL1(PA.8)---|RTS  | |\n");
     printf("| |______|                                          |_____| |\n");
     printf("|                                                           |\n");
     printf("+-----------------------------------------------------------+\n");
@@ -315,18 +308,10 @@ void SYS_Init(void)
     /* Set the UART debug port */
     Uart0DefaultMPF();
 
-    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
-    {
-        /* Set multi-function pins for USCI0_DAT0(PB.8), USCI0_DAT1(PB.9) and USCI0_CTL1(PB.15) */
-        SYS->GPB_MFPH &= ~(SYS_GPB_MFPH_PB15MFP_Msk | SYS_GPB_MFPH_PB9MFP_Msk | SYS_GPB_MFPH_PB8MFP_Msk);
-        SYS->GPB_MFPH |= (SYS_GPB_MFPH_PB15MFP_USCI0_CTL1 | SYS_GPB_MFPH_PB9MFP_USCI0_DAT1 |SYS_GPB_MFPH_PB8MFP_USCI0_DAT0);
-    }
-    else
-    {
-        /* Set PB multi-function pins for USCI0_DAT0(PA.10) and USCI0_DAT1(PA.9) and USCI0_CTL1(PA.8) */
-        SYS->GPA_MFPH &= ~(SYS_GPA_MFPH_PA10MFP_Msk | SYS_GPA_MFPH_PA9MFP_Msk | SYS_GPA_MFPH_PA8MFP_Msk);
-        SYS->GPA_MFPH |= (SYS_GPA_MFPH_PA10MFP_USCI0_DAT0 | SYS_GPA_MFPH_PA9MFP_USCI0_DAT1 | SYS_GPA_MFPH_PA8MFP_USCI0_CTL1);
-    }
+    /* Set multi-function pins for USCI0_DAT0(PA.10), USCI0_DAT1(PA.9) and USCI0_CTL1(PA.8) */
+    /* NOTE: Reference for LQFP64/48. Update pin assignments if using QFN33.*/
+    SYS->GPA_MFPH = (SYS->GPA_MFPH & ~(SYS_GPA_MFPH_PA10MFP_Msk | SYS_GPA_MFPH_PA9MFP_Msk | SYS_GPA_MFPH_PA8MFP_Msk)) |
+                    (SYS_GPA_MFPH_PA10MFP_USCI0_DAT0 | SYS_GPA_MFPH_PA9MFP_USCI0_DAT1 | SYS_GPA_MFPH_PA8MFP_USCI0_CTL1);
 }
 
 void UART0_Init(void)

@@ -69,16 +69,9 @@ int main()
     printf("Configure USCI_SPI0 as a slave.\n");
     printf("Bit length of a transaction: 16\n");
     printf("The I/O connection for USCI_SPI0:\n");
-    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
-    {
-        printf("    USCI_SPI0_SS (PB.11)\n    USCI_SPI0_CLK (PB.7)\n");
-        printf("    USCI_SPI0_MISO (PB.9)\n    USCI_SPI0_MOSI (PB.8)\n\n");
-    }
-    else
-    {
-        printf("    USCI_SPI0_SS (PB.0)\n    USCI_SPI0_CLK (PA.11)\n");
-        printf("    USCI_SPI0_MISO (PA.9)\n    USCI_SPI0_MOSI (PA.10)\n\n");
-    }
+    /* NOTE: Reference for LQFP64/48. Update pin assignments if using QFN33.*/
+    printf("    USCI_SPI0_SS (PB.0)\n    USCI_SPI0_CLK (PA.11)\n");
+    printf("    USCI_SPI0_MISO (PA.9)\n    USCI_SPI0_MOSI (PA.10)\n\n");
 
     printf("USCI_SPI controller will transfer %d data to a off-chip master device.\n", TEST_COUNT);
     printf("In the meanwhile the USCI_SPI controller will receive %d data from the off-chip master device.\n", TEST_COUNT);
@@ -151,10 +144,7 @@ void SYS_Init(void)
     CLK_EnableModuleClock(USCI0_MODULE);
 
     /* Enable GPIO clock */
-    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
-        CLK_EnableModuleClock(GPB_MODULE);
-    else
-        CLK_EnableModuleClock(GPA_MODULE);
+    CLK_EnableModuleClock(GPA_MODULE);
 
     /* Update System Core Clock */
     SystemCoreClockUpdate();
@@ -165,26 +155,16 @@ void SYS_Init(void)
     /* Set the UART debug port */
     Uart0DefaultMPF();
 
-    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
-    {
-        /* Set USCI0_SPI multi-function pins */
-        SYS->GPB_MFPL = (SYS->GPB_MFPL & ~(SYS_GPB_MFPL_PB7MFP_Msk)) | (SYS_GPB_MFPL_PB7MFP_USCI0_CLK);
-        SYS->GPB_MFPH = SYS->GPB_MFPH & ~(SYS_GPB_MFPH_PB8MFP_Msk|SYS_GPB_MFPH_PB9MFP_Msk|SYS_GPB_MFPH_PB11MFP_Msk);
-        SYS->GPB_MFPH = SYS->GPB_MFPH | (SYS_GPB_MFPH_PB8MFP_USCI0_DAT0 | SYS_GPB_MFPH_PB9MFP_USCI0_DAT1 | SYS_GPB_MFPH_PB11MFP_USCI0_CTL0);
+    /* Set USCI0_SPI multi-function pins */
+    SYS->GPB_MFPL = (SYS->GPB_MFPL & ~SYS_GPB_MFPL_PB0MFP_Msk) | SYS_GPB_MFPL_PB0MFP_USCI0_CTL0;
 
-        /* USCI_SPI clock pin enable schmitt trigger */
-        PB->SMTEN |= GPIO_SMTEN_SMTEN7_Msk;
-    }
-    else
-    {
-        /* Set USCI0_SPI multi-function pins */
-        SYS->GPB_MFPL = (SYS->GPB_MFPL & ~(SYS_GPB_MFPL_PB0MFP_Msk)) | (SYS_GPB_MFPL_PB0MFP_USCI0_CTL0);
-        SYS->GPA_MFPH = SYS->GPA_MFPH & ~(SYS_GPA_MFPH_PA11MFP_Msk|SYS_GPA_MFPH_PA10MFP_Msk|SYS_GPA_MFPH_PA9MFP_Msk);
-        SYS->GPA_MFPH = SYS->GPA_MFPH | (SYS_GPA_MFPH_PA11MFP_USCI0_CLK | SYS_GPA_MFPH_PA10MFP_USCI0_DAT0 | SYS_GPA_MFPH_PA9MFP_USCI0_DAT1);
+    /* Set USCI0_SPI multi-function pins */
+    /* NOTE: Reference for LQFP64/48. Update pin assignments if using QFN33.*/
+    SYS->GPA_MFPH = (SYS->GPA_MFPH & ~(SYS_GPA_MFPH_PA11MFP_Msk | SYS_GPA_MFPH_PA10MFP_Msk | SYS_GPA_MFPH_PA9MFP_Msk)) |
+                    (SYS_GPA_MFPH_PA11MFP_USCI0_CLK | SYS_GPA_MFPH_PA10MFP_USCI0_DAT0 | SYS_GPA_MFPH_PA9MFP_USCI0_DAT1);
 
-        /* USCI_SPI clock pin enable schmitt trigger */
-        PA->SMTEN |= GPIO_SMTEN_SMTEN11_Msk;
-    }
+    /* USCI_SPI clock pin enable schmitt trigger */
+    PA->SMTEN |= GPIO_SMTEN_SMTEN11_Msk;
 }
 
 void USCI_SPI_Init(void)

@@ -372,13 +372,6 @@ int main()
     /* Init UART0 to 115200-8n1 for print message */
     UART_Open(UART0, 115200);
 
-    /* Checking if target device supports the feature */
-    if( (CHIP_TYPE == CHIP_TYPE_CM2003E) )
-    {
-        printf("CM2003E doesn't support the feature\n");
-        while(SYS->PDID);
-    }
-
     /* Select CAN Multi-Function */
     CAN_Init(tCAN);
     Note_Configure();

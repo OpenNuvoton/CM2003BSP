@@ -65,12 +65,9 @@ void SYS_Init(void)
     /*---------------------------------------------------------------------------------------------------------*/
     Uart0DefaultMPF();
 
-    /* Set PB multi-function pins for UART1 TXD, RXD, CTS and RTS */
+    /* Set PB multi-function pins for UART1 TXD and RXD (IrDA only needs TX and RX) */
     SYS->GPB_MFPL = ((SYS->GPB_MFPL & ~(SYS_GPB_MFPL_PB2MFP_Msk | SYS_GPB_MFPL_PB3MFP_Msk)) |   \
                      (SYS_GPB_MFPL_PB2MFP_UART1_RXD | SYS_GPB_MFPL_PB3MFP_UART1_TXD));
-    SYS->GPB_MFPH = ((SYS->GPB_MFPH & ~(SYS_GPB_MFPH_PB8MFP_Msk | SYS_GPB_MFPH_PB9MFP_Msk))  |  \
-                     (SYS_GPB_MFPH_PB8MFP_UART1_nRTS | SYS_GPB_MFPH_PB9MFP_UART1_nCTS));
-
 
     /* Lock protected registers */
     SYS_LockReg();

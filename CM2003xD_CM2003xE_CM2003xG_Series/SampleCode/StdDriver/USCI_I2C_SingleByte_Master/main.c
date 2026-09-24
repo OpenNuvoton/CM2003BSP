@@ -47,10 +47,7 @@ void SYS_Init(void)
     CLK_EnableModuleClock(USCI0_MODULE);
 
     /* Enable GPIO clock */
-    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
-        CLK_EnableModuleClock(GPB_MODULE);
-    else
-        CLK_EnableModuleClock(GPA_MODULE);
+    CLK_EnableModuleClock(GPA_MODULE);
 
     /* Update System Core Clock */
     SystemCoreClockUpdate();
@@ -61,38 +58,20 @@ void SYS_Init(void)
     /* Set the UART debug port */
     Uart0DefaultMPF();
 
-    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
-    {
-        /* Set UI2C0 multi-function pins */
-        SYS->GPB_MFPL = (SYS->GPB_MFPL & ~(SYS_GPB_MFPL_PB7MFP_Msk)) | (SYS_GPB_MFPL_PB7MFP_USCI0_CLK);
-        SYS->GPB_MFPH = (SYS->GPB_MFPH & ~(SYS_GPB_MFPH_PB8MFP_Msk)) | (SYS_GPB_MFPH_PB8MFP_USCI0_DAT0);
+    /* Set UI2C0 multi-function pins */
+    /* NOTE: Reference for LQFP64/48. Update pin assignments if using QFN33.*/
+    SYS->GPA_MFPH = (SYS->GPA_MFPH & ~(SYS_GPA_MFPH_PA10MFP_Msk | SYS_GPA_MFPH_PA11MFP_Msk)) |
+                                      (SYS_GPA_MFPH_PA10MFP_USCI0_DAT0 | SYS_GPA_MFPH_PA11MFP_USCI0_CLK);
 
-        /* CM2003: USCI_I2C MFP default is push-pull — must select open-drain */
-        SYS->GPB_MFOS |= (SYS_GPB_MFOS_PB7MFOS_Msk | SYS_GPB_MFOS_PB8MFOS_Msk);
+    /* CM2003: USCI_I2C MFP default is push-pull — must select open-drain */
+    SYS->GPA_MFOS |= (SYS_GPA_MFOS_PA10MFOS_Msk | SYS_GPA_MFOS_PA11MFOS_Msk);
 
-        /* Weak internal pull-up (external 4.7k to VDD still recommended) */
-        PB->PUSEL = (PB->PUSEL & ~((3ul << (7 << 1)) | (3ul << (8 << 1)))) |
-                    ((GPIO_PUSEL_PULL_UP << (7 << 1)) | (GPIO_PUSEL_PULL_UP << (8 << 1)));
+    /* Weak internal pull-up (external 4.7k to VDD still recommended) */
+    PA->PUSEL = (PA->PUSEL & ~((3ul << (10 << 1)) | (3ul << (11 << 1)))) |
+                ((GPIO_PUSEL_PULL_UP << (10 << 1)) | (GPIO_PUSEL_PULL_UP << (11 << 1)));
 
-        /* USCI_I2C pin enable schmitt trigger */
-        PB->SMTEN |= GPIO_SMTEN_SMTEN7_Msk | GPIO_SMTEN_SMTEN8_Msk;
-    }
-    else
-    {
-        /* Set UI2C0 multi-function pins */
-        SYS->GPA_MFPH = (SYS->GPA_MFPH & ~(SYS_GPA_MFPH_PA11MFP_Msk)) | (SYS_GPA_MFPH_PA11MFP_USCI0_CLK);
-        SYS->GPA_MFPH = (SYS->GPA_MFPH & ~(SYS_GPA_MFPH_PA10MFP_Msk)) | (SYS_GPA_MFPH_PA10MFP_USCI0_DAT0);
-
-        /* CM2003: USCI_I2C MFP default is push-pull — must select open-drain */
-        SYS->GPA_MFOS |= (SYS_GPA_MFOS_PA10MFOS_Msk | SYS_GPA_MFOS_PA11MFOS_Msk);
-
-        /* Weak internal pull-up (external 4.7k to VDD still recommended) */
-        PA->PUSEL = (PA->PUSEL & ~((3ul << (10 << 1)) | (3ul << (11 << 1)))) |
-                    ((GPIO_PUSEL_PULL_UP << (10 << 1)) | (GPIO_PUSEL_PULL_UP << (11 << 1)));
-
-        /* USCI_I2C pin enable schmitt trigger */
-        PA->SMTEN |= GPIO_SMTEN_SMTEN10_Msk | GPIO_SMTEN_SMTEN11_Msk;
-    }
+    /* USCI_I2C pin enable schmitt trigger */
+    PA->SMTEN |= GPIO_SMTEN_SMTEN10_Msk | GPIO_SMTEN_SMTEN11_Msk;
 }
 
 void UI2C0_Init(uint32_t u32ClkSpeed)
@@ -166,10 +145,8 @@ int main(void)
     printf("\n");
     printf("Configure UI2C0 as a Master\n");
     printf("The I/O connection to UI2C0:\n");
-    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
-        printf("UI2C0_SDA(PB8), UI2C0_SCL(PB7)\n");
-    else
-        printf("UI2C0_SDA(PA10), UI2C0_SCL(PA11)\n");
+    /* NOTE: Reference for LQFP64/48. Update pin assignments if using QFN33.*/
+    printf("UI2C0_SDA(PA10), UI2C0_SCL(PA11)\n");
     printf("Press any key to continue\n");
     getchar();
 

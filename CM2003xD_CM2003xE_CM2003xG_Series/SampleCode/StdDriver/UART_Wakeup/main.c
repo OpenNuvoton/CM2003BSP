@@ -70,16 +70,11 @@ void SYS_Init(void)
     /*---------------------------------------------------------------------------------------------------------*/
     Uart0DefaultMPF();
 
-    /* Set PB multi-function pins for UART1 TXD, RXD, CTS and RTS */
-    SYS->GPB_MFPL = ((SYS->GPB_MFPL & ~(SYS_GPB_MFPL_PB2MFP_Msk | SYS_GPB_MFPL_PB3MFP_Msk)) |   \
-                     (SYS_GPB_MFPL_PB2MFP_UART1_RXD | SYS_GPB_MFPL_PB3MFP_UART1_TXD));
-    if (CHIP_TYPE == CHIP_TYPE_CM2003G)
-        SYS->GPB_MFPH = ((SYS->GPB_MFPH & ~(SYS_GPB_MFPH_PB8MFP_Msk | SYS_GPB_MFPH_PB9MFP_Msk))  |  \
-                         (SYS_GPB_MFPH_PB8MFP_UART1_nRTS | SYS_GPB_MFPH_PB9MFP_UART1_nCTS));
-    else
-        SYS->GPA_MFPL = ((SYS->GPA_MFPL & ~(SYS_GPA_MFPL_PA0MFP_Msk | SYS_GPA_MFPL_PA1MFP_Msk))  |  \
-                         (SYS_GPA_MFPL_PA0MFP_UART1_nRTS | SYS_GPA_MFPL_PA1MFP_UART1_nCTS));
-
+    /* Set PA multi-function pins for UART1 TXD, RXD, CTS and RTS */
+    SYS->GPA_MFPL = (SYS->GPA_MFPL & ~(SYS_GPA_MFPL_PA0MFP_Msk | SYS_GPA_MFPL_PA1MFP_Msk |
+                                       SYS_GPA_MFPL_PA2MFP_Msk | SYS_GPA_MFPL_PA3MFP_Msk)) |
+                    (SYS_GPA_MFPL_PA0MFP_UART1_nRTS | SYS_GPA_MFPL_PA1MFP_UART1_nCTS |
+                     SYS_GPA_MFPL_PA2MFP_UART1_RXD  | SYS_GPA_MFPL_PA3MFP_UART1_TXD);
 }
 
 void UART0_Init(void)
