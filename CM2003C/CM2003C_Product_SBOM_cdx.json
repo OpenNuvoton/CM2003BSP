@@ -1,0 +1,341 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:26be6653-ac72-407a-b0ce-b1514585886f",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-11-19T00:17:53-05:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "author": "anchore",
+          "name": "syft",
+          "version": "1.45.1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "02b6c85bedacc03c",
+      "type": "library",
+      "name": "MCU Driver",
+      "version": "e80ca2e",
+      "supplier": {
+        "name": "Nuvoton Technology Corp.",
+        "url": [
+          "https://www.nuvoton.com"
+        ]
+      },
+      "purl": "pkg:generic/nuvoton/mcu-driver@e80ca2e",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:sbom-category",
+          "value": "product"
+        },
+        {
+          "name": "bsp:scope",
+          "value": "Components included in, linked with, deployed to, or reasonably expected to be integrated into final product firmware/software."
+        },
+        {
+          "name": "bsp:scope-policy-file",
+          "value": "product-scope.yaml"
+        },
+        {
+          "name": "bsp:runtime-scope",
+          "value": "true"
+        },
+        {
+          "name": "bsp:included-in-product-firmware",
+          "value": "true"
+        },
+        {
+          "name": "bsp:third-party-components",
+          "value": "none identified in product scope based on the defined Product SBOM scope policy"
+        },
+        {
+          "name": "bsp:product-scope-include-path",
+          "value": "Library/CMSIS"
+        },
+        {
+          "name": "bsp:product-scope-include-path",
+          "value": "Library/Device"
+        },
+        {
+          "name": "bsp:product-scope-include-path",
+          "value": "Library/StdDriver"
+        },
+        {
+          "name": "bsp:product-scope-exclude-path",
+          "value": "Library/CMSIS/Core/Test/"
+        },
+        {
+          "name": "bsp:product-scope-exclude-path",
+          "value": "Document/"
+        },
+        {
+          "name": "bsp:product-scope-exclude-path",
+          "value": "SampleCode/"
+        }
+      ]
+    },
+    "lifecycles": [
+      {
+        "phase": "pre-build"
+      }
+    ],
+    "supplier": {
+      "name": "Nuvoton Technology Corp.",
+      "url": [
+        "https://www.nuvoton.com"
+      ]
+    },
+    "authors": [
+      {
+        "name": "Nuvoton Technology Corp."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "cm2003c:product-component:library-device",
+      "name": "CM2003C Device",
+      "version": "e80ca2e",
+      "supplier": {
+        "name": "Nuvoton Technology Corp.",
+        "url": [
+          "https://www.nuvoton.com"
+        ]
+      },
+      "purl": "pkg:generic/nuvoton/library-device@e80ca2e",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d669337f591fcfdcb02d9df7f80ed2054e9108192920e12c9323417f1b6dd68b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "scope": "required",
+      "description": "Directory-level first-party BSP product component included from product scope path Library/Device",
+      "properties": [
+        {
+          "name": "bsp:sbom-category",
+          "value": "product"
+        },
+        {
+          "name": "bsp:path",
+          "value": "Library/Device"
+        },
+        {
+          "name": "bsp:component-origin",
+          "value": "first-party"
+        },
+        {
+          "name": "bsp:component-granularity",
+          "value": "directory"
+        },
+        {
+          "name": "bsp:scope-policy-file",
+          "value": "product-scope.yaml"
+        },
+        {
+          "name": "bsp:runtime-scope",
+          "value": "true"
+        },
+        {
+          "name": "bsp:included-in-product-firmware",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "cm2003c:product-component:library-stddriver",
+      "name": "CM2003C StdDriver",
+      "version": "e80ca2e",
+      "supplier": {
+        "name": "Nuvoton Technology Corp.",
+        "url": [
+          "https://www.nuvoton.com"
+        ]
+      },
+      "purl": "pkg:generic/nuvoton/library-stddriver@e80ca2e",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3cd64ab99231fea1b5c89730e07845ae6b3fe887522c1ef16fbfc76d62126837"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "scope": "required",
+      "description": "Directory-level first-party BSP product component included from product scope path Library/StdDriver",
+      "properties": [
+        {
+          "name": "bsp:sbom-category",
+          "value": "product"
+        },
+        {
+          "name": "bsp:path",
+          "value": "Library/StdDriver"
+        },
+        {
+          "name": "bsp:component-origin",
+          "value": "first-party"
+        },
+        {
+          "name": "bsp:component-granularity",
+          "value": "directory"
+        },
+        {
+          "name": "bsp:scope-policy-file",
+          "value": "product-scope.yaml"
+        },
+        {
+          "name": "bsp:runtime-scope",
+          "value": "true"
+        },
+        {
+          "name": "bsp:included-in-product-firmware",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "cm2003c:cmsis-product",
+      "name": "CMSIS",
+      "version": "6.1.0",
+      "supplier": {
+        "name": "Arm Limited"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6022e06641c3d5ebf0a11ebf9608adf0cfef0637e0b731d12743a93ca97c096b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:version-basis",
+          "value": "Repository README declares CMSIS 6.1.0; upstream identity not independently verified."
+        },
+        {
+          "name": "bsp:hash-subject",
+          "value": "sorted directory file manifest"
+        },
+        {
+          "name": "bsp:hash-algorithm",
+          "value": "SHA256 of UTF-8 concatenated BSP-relative path + NUL + lowercase file SHA256 + LF, sorted by path"
+        },
+        {
+          "name": "bsp:license-assessment-basis",
+          "value": "Repository README and inspected CMSIS source headers; complete file-level review pending."
+        },
+        {
+          "name": "bsp:included-file-count",
+          "value": "2135"
+        },
+        {
+          "name": "bsp:path",
+          "value": "Library/CMSIS"
+        },
+        {
+          "name": "bsp:excluded-path",
+          "value": "Library/CMSIS/Core/Test"
+        },
+        {
+          "name": "bsp:component-origin",
+          "value": "third-party"
+        }
+      ],
+      "purl": "pkg:generic/cmsis@6.1.0"
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003c:file:gcc-syscalls",
+      "name": "Library/Device/Nuvoton/CM2003/Source/GCC/_syscalls.c",
+      "purl": "pkg:generic/cm2003c-gcc-syscalls?sha256=c353a276489bc5cc5c7932f35c804cc27a264373e90d6409c224624ae1a08612",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c353a276489bc5cc5c7932f35c804cc27a264373e90d6409c224624ae1a08612"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "Library/Device/Nuvoton/CM2003/Source/GCC/_syscalls.c"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:license-evidence",
+          "value": "File header mentions uOS++ III, newlib and GPL; exact license terms/version not established."
+        }
+      ],
+      "supplier": {
+        "name": "Nuvoton Technology Corporation"
+      },
+      "manufacturer": {
+        "name": "Nuvoton Technology Corporation"
+      }
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "02b6c85bedacc03c",
+      "dependsOn": [
+        "cm2003c:product-component:library-device",
+        "cm2003c:product-component:library-stddriver"
+      ]
+    }
+  ],
+  "signature": {
+    "algorithm": "ES256",
+    "keyId": "pfwang@nuvoton.com",
+    "publicKey": {
+      "kty": "EC",
+      "crv": "P-256",
+      "x": "TOCzLP_nWUL-jWX-1ceTy7kloK1rFhFRrp55k72jNAA",
+      "y": "WpSo0LPMsn1Ca8XAR2lgYTOiuKzvf3IkxAo0YN6vThg"
+    },
+    "value": "wlSvKUXOi1xOYNTSYv6MLpLR0f5KRzcu9eCXLUhbnb_DQLWF2_FXwwX8Rm1UHOmgEdxhx3DAC4N3Zigt2tLsuw"
+  }
+}

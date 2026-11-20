@@ -1,0 +1,6 @@
+sbomType: Test Sample SBOM
+include:
+  - path: SampleCode/
+  - path: Library/CMSIS/Core/Test/
+exclude:
+  - path: Document/

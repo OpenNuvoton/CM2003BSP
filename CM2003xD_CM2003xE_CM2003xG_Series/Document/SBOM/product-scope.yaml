@@ -1,0 +1,9 @@
+sbomType: Product SBOM
+include:
+  - path: Library/CMSIS
+  - path: Library/Device
+  - path: Library/StdDriver
+exclude:
+  - path: Library/CMSIS/Core/Test/
+  - path: Document/
+  - path: SampleCode/

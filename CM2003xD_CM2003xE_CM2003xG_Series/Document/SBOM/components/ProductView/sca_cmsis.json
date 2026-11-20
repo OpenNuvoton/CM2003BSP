@@ -1,0 +1,64 @@
+{
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "cm2003deg:cmsis-product",
+      "name": "CMSIS",
+      "version": "6.1.0",
+      "supplier": {
+        "name": "Arm Limited"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6022e06641c3d5ebf0a11ebf9608adf0cfef0637e0b731d12743a93ca97c096b"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:version-basis",
+          "value": "Repository README declares CMSIS 6.1.0; upstream identity not independently verified."
+        },
+        {
+          "name": "bsp:hash-subject",
+          "value": "sorted directory file manifest"
+        },
+        {
+          "name": "bsp:hash-algorithm",
+          "value": "SHA256 of UTF-8 concatenated BSP-relative path + NUL + lowercase file SHA256 + LF, sorted by path"
+        },
+        {
+          "name": "bsp:license-assessment-basis",
+          "value": "Repository README and inspected CMSIS source headers; complete file-level review pending."
+        },
+        {
+          "name": "bsp:included-file-count",
+          "value": "2135"
+        },
+        {
+          "name": "bsp:path",
+          "value": "Library/CMSIS"
+        },
+        {
+          "name": "bsp:excluded-path",
+          "value": "Library/CMSIS/Core/Test"
+        },
+        {
+          "name": "bsp:component-origin",
+          "value": "third-party"
+        }
+      ]
+    }
+  ]
+}

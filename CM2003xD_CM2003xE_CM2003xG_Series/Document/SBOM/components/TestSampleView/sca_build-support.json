@@ -1,0 +1,93 @@
+{
+  "components": [
+    {
+      "type": "data",
+      "bom-ref": "cm2003deg:tracked-build-support",
+      "name": "Tracked Hard_Fault_Sample build support files",
+      "purl": "pkg:generic/cm2003-tracked-build-support",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b385791112318e727655e02936c4f93cffca41382e50dee355240744d432a3c1"
+        }
+      ],
+      "description": "Tracked build configuration, generated source, logs and metadata omitted from the Syft view by the generator's VSCode/tmp rule.",
+      "properties": [
+        {
+          "name": "bsp:path",
+          "value": "SampleCode/Hard_Fault_Sample/VSCode/tmp"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:excluded-paths",
+          "value": "[\"SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CMakeDetermineCompilerABI_C.bin\", \"SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o\"]"
+        },
+        {
+          "name": "bsp:included-file-count",
+          "value": "53"
+        },
+        {
+          "name": "bsp:hash-subject",
+          "value": "sorted directory file manifest"
+        },
+        {
+          "name": "bsp:hash-algorithm",
+          "value": "SHA256 of UTF-8 concatenated BSP-relative path + NUL + lowercase file SHA256 + LF, sorted by path"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Mixed build support files; no independent version assigned."
+        },
+        {
+          "name": "bsp:license-assessment-basis",
+          "value": "Generated and tool-origin files; applicable notices and source provenance remain under review."
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003deg:file:SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o",
+      "name": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o",
+      "purl": "pkg:generic/cm2003-compiler-probe-object?sha256=3782c1733305735874eee7959e5224512d4c7c639b0278b12cd399f191f1fe69",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3782c1733305735874eee7959e5224512d4c7c639b0278b12cd399f191f1fe69"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:sbom-category",
+          "value": "test-sample"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "No independently verified object-file version."
+        },
+        {
+          "name": "bsp:source-evidence",
+          "value": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.c"
+        }
+      ]
+    }
+  ]
+}
