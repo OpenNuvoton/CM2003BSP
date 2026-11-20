@@ -1,0 +1,4 @@
+
+# Preserve signed SBOM and manifest bytes.
+*_SBOM_cdx.json -text
+*_SBOM_Manifest.json -text

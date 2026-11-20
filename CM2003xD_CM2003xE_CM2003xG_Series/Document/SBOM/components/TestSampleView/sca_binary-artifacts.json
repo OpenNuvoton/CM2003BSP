@@ -1,0 +1,106 @@
+{
+  "components": [
+    {
+      "type": "file",
+      "bom-ref": "cm2003deg:file:SampleCode/StdDriver/FMC_IAP/KEIL/FMC_IAP_LDROM.bin",
+      "name": "SampleCode/StdDriver/FMC_IAP/KEIL/FMC_IAP_LDROM.bin",
+      "purl": "pkg:generic/cm2003deg-binary?sha256=8edcc9433a65785d9828311e17fb46f99942fe8acf186692fd16966efd42ffbb",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8edcc9433a65785d9828311e17fb46f99942fe8acf186692fd16966efd42ffbb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/StdDriver/FMC_IAP/KEIL/FMC_IAP_LDROM.bin"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Independent version not established; exact distributed file identified by path and SHA256."
+        },
+        {
+          "name": "bsp:provenance-review",
+          "value": "Binary matches the sibling BSP, while accompanying LDROM source differs; source/binary consistency requires review."
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003deg:file:SampleCode/StdDriver/FMC_IAP/VSCode/bin/fmc_ld_iap.bin",
+      "name": "SampleCode/StdDriver/FMC_IAP/VSCode/bin/fmc_ld_iap.bin",
+      "purl": "pkg:generic/cm2003deg-binary?sha256=b45a1ccb8981686794e456f272d8fd702e74cbef0d15d09160651c70f2e6fd01",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b45a1ccb8981686794e456f272d8fd702e74cbef0d15d09160651c70f2e6fd01"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/StdDriver/FMC_IAP/VSCode/bin/fmc_ld_iap.bin"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Independent version not established; exact distributed file identified by path and SHA256."
+        },
+        {
+          "name": "bsp:provenance-review",
+          "value": "Binary matches the sibling BSP, while accompanying LDROM source differs; source/binary consistency requires review."
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003deg:file:SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CMakeDetermineCompilerABI_C.bin",
+      "name": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CMakeDetermineCompilerABI_C.bin",
+      "purl": "pkg:generic/cm2003deg-binary?sha256=709542435c898a2fe4ed49e984f968e101216c3649804d106504d9118a48525e",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "709542435c898a2fe4ed49e984f968e101216c3649804d106504d9118a48525e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CMakeDetermineCompilerABI_C.bin"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Independent version not established; exact distributed file identified by path and SHA256."
+        },
+        {
+          "name": "bsp:provenance-review",
+          "value": "Path suggests a compiler ABI probe; exact toolchain origin and license not established."
+        }
+      ]
+    }
+  ]
+}

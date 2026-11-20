@@ -1,0 +1,422 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:72dd7e14-80c3-4c80-b8df-b5029388aaba",
+  "version": 2,
+  "metadata": {
+    "timestamp": "2026-11-19T07:43:13+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "author": "anchore",
+          "name": "syft",
+          "version": "1.45.1"
+        }
+      ]
+    },
+    "component": {
+      "bom-ref": "ad39116fc4a515f8",
+      "type": "application",
+      "name": "MCU Test Sample",
+      "version": "e80ca2e",
+      "supplier": {
+        "name": "Nuvoton Technology Corp.",
+        "url": [
+          "https://www.nuvoton.com"
+        ]
+      },
+      "purl": "pkg:generic/nuvoton/mcu-test-sample@e80ca2e",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:sbom-category",
+          "value": "test-sample"
+        },
+        {
+          "name": "bsp:scope",
+          "value": "Components used only for examples, demonstrations, validation, host-side utilities, or testing; not included in product runtime unless explicitly integrated by the user."
+        },
+        {
+          "name": "bsp:scope-policy-file",
+          "value": "test-sample-scope.yaml"
+        },
+        {
+          "name": "bsp:runtime-scope",
+          "value": "false"
+        },
+        {
+          "name": "bsp:included-in-product-firmware",
+          "value": "false"
+        },
+        {
+          "name": "bsp:test-sample-scope-include-path",
+          "value": "SampleCode/"
+        },
+        {
+          "name": "bsp:test-sample-scope-include-path",
+          "value": "Library/CMSIS/Core/Test/"
+        },
+        {
+          "name": "bsp:test-sample-scope-exclude-path",
+          "value": "Document/"
+        }
+      ]
+    },
+    "lifecycles": [
+      {
+        "phase": "pre-build"
+      }
+    ],
+    "supplier": {
+      "name": "Nuvoton Technology Corp.",
+      "url": [
+        "https://www.nuvoton.com"
+      ]
+    },
+    "authors": [
+      {
+        "name": "Nuvoton Technology Corp."
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "application",
+      "bom-ref": "cm2003xd_cm2003xe_cm2003xg_series:test-sample-component:samplecode",
+      "name": "CM2003xD_CM2003xE_CM2003xG_Series SampleCode",
+      "version": "e80ca2e",
+      "supplier": {
+        "name": "Nuvoton Technology Corp.",
+        "url": [
+          "https://www.nuvoton.com"
+        ]
+      },
+      "purl": "pkg:generic/nuvoton/samplecode@e80ca2e",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "a04acf84d3419bf6110f5dd6cd4b0dfcb7659a508f05a956c4d62cffc0a987f7"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "scope": "required",
+      "description": "Directory-level first-party BSP test-sample component included from test-sample scope path SampleCode/",
+      "properties": [
+        {
+          "name": "bsp:sbom-category",
+          "value": "test-sample"
+        },
+        {
+          "name": "bsp:path",
+          "value": "SampleCode/"
+        },
+        {
+          "name": "bsp:component-origin",
+          "value": "first-party"
+        },
+        {
+          "name": "bsp:component-granularity",
+          "value": "directory"
+        },
+        {
+          "name": "bsp:scope-policy-file",
+          "value": "test-sample-scope.yaml"
+        },
+        {
+          "name": "bsp:runtime-scope",
+          "value": "false"
+        },
+        {
+          "name": "bsp:included-in-product-firmware",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003deg:file:SampleCode/StdDriver/FMC_IAP/KEIL/FMC_IAP_LDROM.bin",
+      "name": "SampleCode/StdDriver/FMC_IAP/KEIL/FMC_IAP_LDROM.bin",
+      "purl": "pkg:generic/cm2003deg-binary?sha256=8edcc9433a65785d9828311e17fb46f99942fe8acf186692fd16966efd42ffbb",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8edcc9433a65785d9828311e17fb46f99942fe8acf186692fd16966efd42ffbb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/StdDriver/FMC_IAP/KEIL/FMC_IAP_LDROM.bin"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Independent version not established; exact distributed file identified by path and SHA256."
+        },
+        {
+          "name": "bsp:provenance-review",
+          "value": "Binary matches the sibling BSP, while accompanying LDROM source differs; source/binary consistency requires review."
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003deg:file:SampleCode/StdDriver/FMC_IAP/VSCode/bin/fmc_ld_iap.bin",
+      "name": "SampleCode/StdDriver/FMC_IAP/VSCode/bin/fmc_ld_iap.bin",
+      "purl": "pkg:generic/cm2003deg-binary?sha256=b45a1ccb8981686794e456f272d8fd702e74cbef0d15d09160651c70f2e6fd01",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b45a1ccb8981686794e456f272d8fd702e74cbef0d15d09160651c70f2e6fd01"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/StdDriver/FMC_IAP/VSCode/bin/fmc_ld_iap.bin"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Independent version not established; exact distributed file identified by path and SHA256."
+        },
+        {
+          "name": "bsp:provenance-review",
+          "value": "Binary matches the sibling BSP, while accompanying LDROM source differs; source/binary consistency requires review."
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003deg:file:SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CMakeDetermineCompilerABI_C.bin",
+      "name": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CMakeDetermineCompilerABI_C.bin",
+      "purl": "pkg:generic/cm2003deg-binary?sha256=709542435c898a2fe4ed49e984f968e101216c3649804d106504d9118a48525e",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "709542435c898a2fe4ed49e984f968e101216c3649804d106504d9118a48525e"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CMakeDetermineCompilerABI_C.bin"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Independent version not established; exact distributed file identified by path and SHA256."
+        },
+        {
+          "name": "bsp:provenance-review",
+          "value": "Path suggests a compiler ABI probe; exact toolchain origin and license not established."
+        }
+      ]
+    },
+    {
+      "type": "data",
+      "bom-ref": "cm2003deg:tracked-build-support",
+      "name": "Tracked Hard_Fault_Sample build support files",
+      "purl": "pkg:generic/cm2003-tracked-build-support",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b385791112318e727655e02936c4f93cffca41382e50dee355240744d432a3c1"
+        }
+      ],
+      "description": "Tracked build configuration, generated source, logs and metadata omitted from the Syft view by the generator's VSCode/tmp rule.",
+      "properties": [
+        {
+          "name": "bsp:path",
+          "value": "SampleCode/Hard_Fault_Sample/VSCode/tmp"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:excluded-paths",
+          "value": "[\"SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CMakeDetermineCompilerABI_C.bin\", \"SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o\"]"
+        },
+        {
+          "name": "bsp:included-file-count",
+          "value": "53"
+        },
+        {
+          "name": "bsp:hash-subject",
+          "value": "sorted directory file manifest"
+        },
+        {
+          "name": "bsp:hash-algorithm",
+          "value": "SHA256 of UTF-8 concatenated BSP-relative path + NUL + lowercase file SHA256 + LF, sorted by path"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Mixed build support files; no independent version assigned."
+        },
+        {
+          "name": "bsp:license-assessment-basis",
+          "value": "Generated and tool-origin files; applicable notices and source provenance remain under review."
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003deg:file:SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o",
+      "name": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o",
+      "purl": "pkg:generic/cm2003-compiler-probe-object?sha256=3782c1733305735874eee7959e5224512d4c7c639b0278b12cd399f191f1fe69",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "3782c1733305735874eee7959e5224512d4c7c639b0278b12cd399f191f1fe69"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.o"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:sbom-category",
+          "value": "test-sample"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "No independently verified object-file version."
+        },
+        {
+          "name": "bsp:source-evidence",
+          "value": "SampleCode/Hard_Fault_Sample/VSCode/tmp/1/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.c"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "cm2003deg:cmsis-core-tests",
+      "name": "CMSIS-Core unit tests",
+      "version": "6.1.0",
+      "supplier": {
+        "name": "Arm Limited"
+      },
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "515530e31d0f8602ce82c9a21dfe8ddbfa34caf2cc1a06196e863368e65615cf"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:version-basis",
+          "value": "Repository README declares CMSIS 6.1.0; upstream identity not independently verified."
+        },
+        {
+          "name": "bsp:hash-subject",
+          "value": "sorted directory file manifest"
+        },
+        {
+          "name": "bsp:hash-algorithm",
+          "value": "SHA256 of UTF-8 concatenated BSP-relative path + NUL + lowercase file SHA256 + LF, sorted by path"
+        },
+        {
+          "name": "bsp:license-assessment-basis",
+          "value": "Repository README and inspected CMSIS source headers; complete file-level review pending."
+        },
+        {
+          "name": "bsp:included-file-count",
+          "value": "53"
+        },
+        {
+          "name": "bsp:path",
+          "value": "Library/CMSIS/Core/Test"
+        },
+        {
+          "name": "bsp:component-origin",
+          "value": "third-party"
+        },
+        {
+          "name": "bsp:usage",
+          "value": "upstream unit-test sources; not product runtime"
+        }
+      ],
+      "purl": "pkg:generic/cmsis-core-unit-tests@6.1.0"
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "ad39116fc4a515f8",
+      "dependsOn": [
+        "cm2003deg:cmsis-core-tests",
+        "cm2003xd_cm2003xe_cm2003xg_series:test-sample-component:samplecode"
+      ]
+    }
+  ],
+  "signature": {
+    "algorithm": "ES256",
+    "keyId": "pfwang@nuvoton.com",
+    "publicKey": {
+      "kty": "EC",
+      "crv": "P-256",
+      "x": "TOCzLP_nWUL-jWX-1ceTy7kloK1rFhFRrp55k72jNAA",
+      "y": "WpSo0LPMsn1Ca8XAR2lgYTOiuKzvf3IkxAo0YN6vThg"
+    },
+    "value": "nPY8xnQeh7IRTA1V2r01rAbVWBDuDu0MVbnFW5irGr8GUXjMUq1ETF3ACYbC_bgQO5b9vauFjQW8y-kMU_mVTA"
+  }
+}

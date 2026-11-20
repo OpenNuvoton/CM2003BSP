@@ -1,0 +1,34 @@
+{
+  "components": [
+    {
+      "type": "file",
+      "bom-ref": "cm2003deg:file:gcc-syscalls",
+      "name": "Library/Device/Nuvoton/CM2003/Source/GCC/_syscalls.c",
+      "purl": "pkg:generic/cm2003deg-gcc-syscalls?sha256=c353a276489bc5cc5c7932f35c804cc27a264373e90d6409c224624ae1a08612",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c353a276489bc5cc5c7932f35c804cc27a264373e90d6409c224624ae1a08612"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "Library/Device/Nuvoton/CM2003/Source/GCC/_syscalls.c"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-review"
+        },
+        {
+          "name": "bsp:license-evidence",
+          "value": "File header mentions uOS++ III, newlib and GPL; exact license terms/version not established."
+        }
+      ]
+    }
+  ]
+}

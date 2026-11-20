@@ -1,0 +1,130 @@
+{
+  "components": [
+    {
+      "type": "file",
+      "bom-ref": "cm2003c:file:SampleCode/StdDriver/FMC_IAP/KEIL/FMC_IAP_LDROM.bin",
+      "name": "SampleCode/StdDriver/FMC_IAP/KEIL/FMC_IAP_LDROM.bin",
+      "purl": "pkg:generic/cm2003c-binary?sha256=8edcc9433a65785d9828311e17fb46f99942fe8acf186692fd16966efd42ffbb",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8edcc9433a65785d9828311e17fb46f99942fe8acf186692fd16966efd42ffbb"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/StdDriver/FMC_IAP/KEIL/FMC_IAP_LDROM.bin"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:source-evidence",
+          "value": "SampleCode/StdDriver/FMC_IAP/FMC_IAP_LDROM.c"
+        },
+        {
+          "name": "bsp:source-declared-license",
+          "value": "Apache-2.0"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-binary-license-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Independent binary version not established; identified by path, SHA256 and containing source commit."
+        },
+        {
+          "name": "bsp:build-assessment",
+          "value": "Source/project association collected; reproducible build and complete linked contents not verified."
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003c:file:SampleCode/StdDriver/FMC_IAP/VSCode/bin/fmc_ld_iap.bin",
+      "name": "SampleCode/StdDriver/FMC_IAP/VSCode/bin/fmc_ld_iap.bin",
+      "purl": "pkg:generic/cm2003c-binary?sha256=b45a1ccb8981686794e456f272d8fd702e74cbef0d15d09160651c70f2e6fd01",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b45a1ccb8981686794e456f272d8fd702e74cbef0d15d09160651c70f2e6fd01"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/StdDriver/FMC_IAP/VSCode/bin/fmc_ld_iap.bin"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:source-evidence",
+          "value": "SampleCode/StdDriver/FMC_IAP/FMC_IAP_LDROM.c"
+        },
+        {
+          "name": "bsp:source-declared-license",
+          "value": "Apache-2.0"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-binary-license-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Independent binary version not established; identified by path, SHA256 and containing source commit."
+        },
+        {
+          "name": "bsp:build-assessment",
+          "value": "Source/project association collected; reproducible build and complete linked contents not verified."
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "cm2003c:file:SampleCode/StdDriver/GPIO_INT/Keil/obj/GPIO_INT.bin",
+      "name": "SampleCode/StdDriver/GPIO_INT/Keil/obj/GPIO_INT.bin",
+      "purl": "pkg:generic/cm2003c-binary?sha256=274d166ff55582021f6e081a49fea133486cc6e38bbfb62e0e3a4ba322548796",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "274d166ff55582021f6e081a49fea133486cc6e38bbfb62e0e3a4ba322548796"
+        }
+      ],
+      "properties": [
+        {
+          "name": "bsp:file-path",
+          "value": "SampleCode/StdDriver/GPIO_INT/Keil/obj/GPIO_INT.bin"
+        },
+        {
+          "name": "bsp:source-commit",
+          "value": "e80ca2ecf8000d55657d3061500200aa195de1b3"
+        },
+        {
+          "name": "bsp:source-evidence",
+          "value": "SampleCode/StdDriver/GPIO_INT/main.c"
+        },
+        {
+          "name": "bsp:source-declared-license",
+          "value": "Apache-2.0"
+        },
+        {
+          "name": "bsp:license-status",
+          "value": "needs-binary-license-review"
+        },
+        {
+          "name": "bsp:version-evidence",
+          "value": "Independent binary version not established; identified by path, SHA256 and containing source commit."
+        },
+        {
+          "name": "bsp:build-assessment",
+          "value": "Source/project association collected; reproducible build and complete linked contents not verified."
+        }
+      ]
+    }
+  ]
+}
